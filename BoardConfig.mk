@@ -32,7 +32,7 @@ BOARD_KERNEL_CMDLINE := console=ttyS0 k3v2_pmem=1 vmalloc=512M androidboot.hardw
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100
 BOARD_KERNEL_PAGESIZE := 2048
-TARGET_PREBUILT_KERNEL := device/huawei/hws10201l/kernel
+TARGET_PREBUILT_KERNEL := device/huawei/hws10201l/kernel # 3.0.8
 
 # Filesystem
 # You can get this by multiply /sys/class/block/mmcblk0p11/size * 512 bytes
