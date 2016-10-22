@@ -27,12 +27,14 @@ BOARD_KERNEL_PAGESIZE := 2048
 TARGET_PREBUILT_KERNEL := device/huawei/hws10201l/kernel
 
 # Filesystem
-# fix this up by examining /proc/mtd on a running device
-BOARD_BOOTIMAGE_PARTITION_SIZE := 0x00380000
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x00480000
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 0x08c60000
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 0x105c0000
-BOARD_FLASH_BLOCK_SIZE := 131072
+# You can get this by multiply /sys/class/block/mmcblk0p11/size * 512 bytes
+# If fdisk command not found you should update busybox
+BOARD_BOOTIMAGE_PARTITION_SIZE := 8388608 # 8 Mb, double check with busybox fdisk -l /dev/block/mmcblk0p11
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 16777216 # 16 Mb, double check with busybox fdisk -l /dev/block/mmcblk0p10
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 536870912 # 536 Mb, busybox fdisk -l /dev/block/mmcblk0p16
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 16777216 # 16 Mb, busybox fdisk -l /dev/block/mmcblk0p18
+BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
+TARGET_USERIMAGES_USE_EXT4 := true
 
 # Recovery
 BOARD_HAS_NO_SELECT_BUTTON := true
