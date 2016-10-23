@@ -3,6 +3,7 @@
 
 # Bootloader
 TARGET_NO_BOOTLOADER := true
+TARGET_NO_RADIOIMAGE := true
 TARGET_BOOTLOADER_BOARD_NAME := hws10201l
 
 # Platform
@@ -39,7 +40,7 @@ TARGET_PREBUILT_KERNEL := device/huawei/hws10201l/kernel # 3.0.8
 BOARD_BOOTIMAGE_PARTITION_SIZE := 8388608 # 8 Mb, double check with busybox fdisk -l /dev/block/mmcblk0p11
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 16777216 # 16 Mb, double check with busybox fdisk -l /dev/block/mmcblk0p10
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 536870912 # 536 Mb, busybox fdisk -l /dev/block/mmcblk0p16
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 16777216 # 16 Mb, busybox fdisk -l /dev/block/mmcblk0p18
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 14151581696 # 14.1 Gb, busybox fdisk -l /dev/block/mmcblk0p22
 BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 TARGET_USERIMAGES_USE_EXT4 := true
 
